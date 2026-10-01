@@ -7,6 +7,8 @@ class Jaketts < Formula
   sha256 "8450d6d0e3ec23b5d60eeb6492ad5c9bc6ebaa76960a10e8590e45f24cce4a34"
   license "MIT"
 
+  revision 1
+
   depends_on "rust" => :build
   depends_on arch: :arm64
   depends_on "libsndfile"
