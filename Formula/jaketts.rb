@@ -589,6 +589,10 @@ class Jaketts < Formula
     end
 
     venv.pip_install_and_link buildpath
+
+    # PySide6 bundles optional SQL-driver plugins that link against database
+    # libraries unavailable on clean macOS systems. JakeTTS does not use QtSql.
+    rm_r libexec/"lib/python3.12/site-packages/PySide6/Qt/plugins/sqldrivers"
   end
 
   test do
