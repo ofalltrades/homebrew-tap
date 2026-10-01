@@ -3,8 +3,8 @@ class Jaketts < Formula
 
   desc "Local CLI and desktop text-to-speech powered by Kokoro-82M"
   homepage "https://github.com/ofalltrades/jaketts"
-  url "https://files.pythonhosted.org/packages/81/a7/1a37399ed848ac71e4d8decd2a006c6f0f4a4a6d05fd204a51c113d45321/jaketts-1.0.7.tar.gz"
-  sha256 "8450d6d0e3ec23b5d60eeb6492ad5c9bc6ebaa76960a10e8590e45f24cce4a34"
+  url "https://files.pythonhosted.org/packages/b2/8b/cde7ef9850dc6b0180af64a54a009e26c2d51f46935f6e40c98a1891f577/jaketts-1.0.9.tar.gz"
+  sha256 "3311b432e60f8cf255375a9b344d5c696fef45ee4cc67e5c26802dc09943e185"
   license "MIT"
 
   depends_on "rust" => :build
@@ -14,7 +14,6 @@ class Jaketts < Formula
   depends_on macos: :sonoma
   depends_on "mecab"
   depends_on "portaudio"
-  depends_on "python-tk@3.12"
   depends_on "python@3.12"
 
   resource "espeakng-loader" do
@@ -482,6 +481,18 @@ class Jaketts < Formula
     sha256 "68e658549fc1eb3ff92aed5147fcbb9c15d6e9cc0e623b4d0998d16522ffb4f9"
   end
 
+  resource "shiboken6" do
+    url "https://files.pythonhosted.org/packages/47/44/11bf71c36e71936ab4e923e5dd23599dab527c4488b01860b0f689ce9947/shiboken6-6.11.2-cp310-abi3-macosx_13_0_universal2.whl",
+        using: :nounzip
+    sha256 "53659683b1f7a08e9f87eff9b1065f1ceb7110cd7a4bc09fdf5efe43d286604d"
+  end
+
+  resource "pyside6-essentials" do
+    url "https://files.pythonhosted.org/packages/6f/16/0b7ecf89ebada82ed0430be33809ff325761ece83104f8635b1bd101fcd0/pyside6_essentials-6.11.2-cp310-abi3-macosx_13_0_universal2.whl",
+        using: :nounzip
+    sha256 "77795c145202e65a78d88f7cd409d186e3ba23d159bdb3ba2dcd159ae5e5f0d9"
+  end
+
   resource "tokenizers" do
     url "https://files.pythonhosted.org/packages/67/49/22da045a91732384d3a3771816bf188dc5a1f702c32e635afa7c679c0bef/tokenizers-0.23.2-cp310-abi3-macosx_11_0_arm64.whl",
         using: :nounzip
@@ -556,6 +567,8 @@ class Jaketts < Formula
       espeakng-loader
       hf-xet
       preshed
+      shiboken6
+      pyside6-essentials
       tokenizers
       torch
     ]
@@ -583,5 +596,8 @@ class Jaketts < Formula
 
     system libexec/"bin/python", "-c",
           "from kokoro import KPipeline; KPipeline(lang_code='b', model=False)"
+
+    system libexec/"bin/python", "-c",
+           "from PySide6.QtWidgets import QApplication"
   end
 end
