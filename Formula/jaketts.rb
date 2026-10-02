@@ -7,6 +7,13 @@ class Jaketts < Formula
   sha256 "7c8fd3259dcbf2755611dc625f443e6d37d2351194b98fee3c164bdcf2f96292"
   license "0BSD"
 
+  bottle do
+    root_url "https://github.com/ofalltrades/homebrew-tap/releases/download/jaketts-1.0.10"
+    rebuild 1
+    sha256 arm64_tahoe:   "c1a7b3f76ed9df8784dd16bb8f98db4ca418819ea4dd7abfaf09031e8bbec17f"
+    sha256 arm64_sequoia: "9a1ca7e19fc855219bb7266132fb2c74743d95ba70609afad6e8595620345e9a"
+  end
+
   depends_on "cmake" => :build
   depends_on arch: :arm64
   depends_on "libsndfile"
