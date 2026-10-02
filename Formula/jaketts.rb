@@ -4,7 +4,6 @@ class Jaketts < Formula
   desc "Local CLI and desktop text-to-speech powered by Kokoro-82M via ONNX Runtime"
   homepage "https://github.com/ofalltrades/jaketts"
   url "https://files.pythonhosted.org/packages/b4/6f/caa2ac27af01cfd2a0cc32d57de7d02aaa8340362881d0da3a70b93fb930/jaketts-1.0.10.tar.gz"
-  version "1.0.10"
   sha256 "7c8fd3259dcbf2755611dc625f443e6d37d2351194b98fee3c164bdcf2f96292"
   license "0BSD"
 
