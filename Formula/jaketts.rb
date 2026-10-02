@@ -1,11 +1,11 @@
 class Jaketts < Formula
   include Language::Python::Virtualenv
 
-  desc "Local CLI and desktop text-to-speech powered by Kokoro-82M via ONNX"
+  desc "Local CLI and desktop text-to-speech powered by Kokoro-82M via ONNX Runtime"
   homepage "https://github.com/ofalltrades/jaketts"
-  url "https://github.com/ofalltrades/jaketts/archive/00839bd5fc88e81f3c286c8cbb6a744b7c6a95dc.tar.gz"
+  url "https://github.com/ofalltrades/jaketts/archive/5de0a2b946cc0d132a499181e12adc16d4839d3e.tar.gz"
   version "1.0.10"
-  sha256 "974ff6257be8a327ef05016789e01b1ced2eeacb1cfd3db6e0753a40e29a95c5"
+  sha256 "5b109559a0a26a3384e306fb95a9d7c806c47d6edeaa3620b185b6c29066518d"
   license "0BSD"
 
   depends_on "cmake" => :build
